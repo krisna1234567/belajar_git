@@ -60,6 +60,7 @@ class Main extends CI_Controller {
 	}
 
 	public function proses_checkout($id_bukutamu){
+		date_default_timezone_set('Asia/Jakarta');
 		$data = array('check_out' => date('Y:m:d H:i:s')
 		);
 		$where = array('id_bukutamu' => $id_bukutamu);
