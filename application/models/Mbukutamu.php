@@ -21,5 +21,15 @@ class Mbukutamu extends CI_model{
         $this->db->update($table, $data);
 
     }
+    function check_out($where, $table){
+        return $this->db->get_where($table, $where);
+    }
+
+    function query_checkout($where, $data, $table){
+        $this->db->where($where);
+        $this->db->update($table, $data);
+
+    }
+
 }
 ?>

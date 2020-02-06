@@ -52,4 +52,22 @@ class Main extends CI_Controller {
 		redirect('Main');
 	}
 
+	public function check_out($id_bukutamu){
+		$where = array('id_bukutamu' => $id_bukutamu);
+		$data['checkout'] =$this->Mbukutamu->check_out($where, 'tbl_bukutamu')->result();
+		$this->load->view('check_out',$data);
+
+	}
+
+	public function proses_checkout($id_bukutamu){
+		$data = array('check_out' => date('Y:m:d H:i:s')
+		);
+		$where = array('id_bukutamu' => $id_bukutamu);
+		$this->Mbukutamu->query_checkout($where, $data,'tbl_bukutamu');
+		echo "<script>alert('berhasil checkout'); </script>";
+		// $this->session->set_flashdata('message', 'anda berhasil checkout');
+		echo "<script>window.location='".site_url('Main')."';</script>";
+		// redirect('Main');
+	}
+
 }

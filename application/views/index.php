@@ -42,7 +42,8 @@
             </td> 
             <td>
                 <a href="<?php echo site_url('Main/edit/');?><?php echo $tm->id_bukutamu;?>">Edit</a> || 
-                <a href="<?php echo site_url('Main/delete/');?><?php echo $tm->id_bukutamu;?>">Delete</a>
+                <a href="<?php echo site_url('Main/delete/');?><?php echo $tm->id_bukutamu;?>">Delete</a> ||
+                <a href="<?php echo site_url('Main/proses_checkout/');?><?php echo $tm->id_bukutamu;?>">Check-Out</a>
             </td>
         </tr>
         <?php $no++; } ?>
